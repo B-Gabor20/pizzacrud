@@ -11,10 +11,13 @@ export function PizzaCreate()
                 fetch(`https://pizza.kando-dev.eu/Pizza`, {
                     method: "POST",
                     credentials: "include",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
                     body: JSON.stringify({
                         name: e.target.elements.name.value,
-                        isGlutenFree: e.target.elements.brand.value,
-                        kepURL: e.target.elements.price.value,
+                        isGlutenFree: e.target.elements.isGlutenFree.value,
+                        kepURL: e.target.elements.kepURL.value,
                     }),
             })
             .then(() => {

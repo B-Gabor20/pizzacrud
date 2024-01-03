@@ -11,9 +11,9 @@ export function PizzaDelete(props) {
     useEffect(() => {
         (async() => {
             try {
-        const res = await fetch(`https://pizza.kando-dev.eu/Pizza${id}`, {credentials: "include"})
-        const ppizza = await res.json();
-        setPizza(ppizza);
+        const res = await fetch(`https://pizza.kando-dev.eu/Pizza/${id}`, {credentials: "include"})
+        const pizza2 = await res.json();
+        setPizza(pizza2);
             } catch(error) {
                 console.log(error);
             }
@@ -26,7 +26,7 @@ return (
             onSubmit={(e) => {
                 e.persist();
                 e.preventDefault();
-                fetch(`https://pizza.kando-dev.eu/Pizza${id}`, {
+                fetch(`https://pizza.kando-dev.eu/Pizza/${id}`, {
                     method: "DELETE",
                     credentials: "include",
                     headers: {
@@ -43,7 +43,7 @@ return (
                 <NavLink to="/">
                     <button type="button" className="btn btn-primary">Vissza</button>
                 </NavLink>
-                <button type="submit" className="btn btn-success">Küldés</button>
+                <button type="submit" className="btn btn-danger">Törlés</button>
             </div>
             </form>
     </div>

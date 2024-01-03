@@ -12,7 +12,7 @@ export function PizzaSingleElement() {
         setFetchPending(true);
         (async() => {
             try{
-            const res = await fetch(`https://pizza.kando-dev.eu/Pizza${pizza.id}`);
+                const res = await fetch(`https://pizza.kando-dev.eu/Pizza/${id}`);
             const pizza2 = await res.json();
             setPizza(pizza2);
         } 
@@ -31,7 +31,7 @@ export function PizzaSingleElement() {
                     <div className="card p-3">
                         <div className="card-body">
                             <h5 className="card-title">{pizza.name}</h5>
-                            <p>Gluténmentes?: {pizza.isGlutenFree ? "true" : "false"}</p>
+                            <p>Gluténmentes?: {pizza.isGlutenFree ? "Igen" : "Nem"}</p>
                             <NavLink to={`/`}>
                             <img className="img-fluid" style={{maxHeight: 200}} src={pizza.kepURL ? pizza.kepURL : 'https://via.placeholder.com/400x800'}/>
                             </NavLink>
@@ -39,9 +39,6 @@ export function PizzaSingleElement() {
                         <div>
                             <NavLink to={`/`}>
                                 <button className="bi bi-backspace rounded">Vissza</button>
-                            </NavLink>
-                            <NavLink key="mod" to={`/mod-pizza/` + pizza.id}>
-                                <button className="bi bi-pencil rounded">Törlés</button>
                             </NavLink>
                         </div>
                     </div>)}

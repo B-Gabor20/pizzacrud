@@ -21,14 +21,15 @@ export function PizzaList()
                     <div>
                         <h2>Pizzák</h2>
                         {pizzas.map((pizza)=>(
-                           <div className='card col-sm-3 d-inline-block m-1 p-2'>
+                           <div className='card col-xs-12 col-md-4 col-xl-2 d-inline-block m-1 p-2'>
                             <NavLink key={`/pizza/${pizza.id}`} to={`/pizza/${pizza.id}`}  >
-                                 <div className='card sol-sm-3 d-inline-block m-1 p-2'>
+                                 <div className='card d-inline-block col-sm-12 m-1 p-1'>
                                 <h6 className='text-muted'>{pizza.isGlutenFree ? "Gluténmentes" : "Nem glutenmentes"}</h6>
                                 <h5 className='text-muted'>{pizza.name}</h5>
                                 <div className='card-body'>
-                                    <img className='img-fluid' style={{maxHeight:200}} alt="hello"
-                                    src={pizza.imageURL ? pizza.imageURL : "https://via.placeholder.com/400x800"}/>
+                                <img className="img-thumbnail img-fluid img-responsive" 
+                                    style={{ height: 200, maxWidth: 200, objectFit: 'cover' }}
+                                    src={pizza.kepURL ? pizza.kepURL : 'https://via.placeholder.com/400x800'}/>
                                 </div>
                             </div>
                            </NavLink>
