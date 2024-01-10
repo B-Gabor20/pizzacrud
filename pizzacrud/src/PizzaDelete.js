@@ -39,7 +39,10 @@ return (
             }}
             >
             <div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-danger">Törlés</button>
+                <NavLink to={`/pizza/${pizza.id}`}>
+                    <button className="btn btn-secondary">Vissza</button>
+                </NavLink>
             </div>
             </form>
     </div>

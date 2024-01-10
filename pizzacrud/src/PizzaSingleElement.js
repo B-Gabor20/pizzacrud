@@ -38,7 +38,7 @@ export function PizzaSingleElement() {
                         </div>
                         <div className="btn-group" role="group">
                            <NavLink key="n"to={`/mod-pizza/${pizza.id}`}  >
-                                <button type="button" class="btn btn-secondary">Módosítás</button>
+                                <button type="button" class="btn btn-primary">Módosítás</button>
                            </NavLink>
                             <NavLink key="i" to={`/delete-pizza/${pizza.id}`}>
                                     <button type="button" class="btn btn-danger">Törlés</button>
@@ -48,9 +48,8 @@ export function PizzaSingleElement() {
                             </NavLink>
                            </div>
                         <div>
-                            
-                        </div>
-                    </div>)}
+                    </div>
+            </div>)}
         </div>
     );
 }

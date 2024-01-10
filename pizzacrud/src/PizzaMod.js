@@ -8,7 +8,7 @@ export function PizzaMod() {
     const id = param.pizzaId;
     const [pizzaData, setPizza] = useState([]);
     const [isFetchPending, setFetchPending] = useState(false);
-
+    
     useEffect(() => {
         setFetchPending(true);
         (async() => {
@@ -66,22 +66,14 @@ export function PizzaMod() {
                 <label className="col-sm-3 col-form-label">Gluténmentes-e:</label>
                     <div>
                     <label className="col-sm-3 col-form-label">
-                        <input
-                            type="radio"
-                            name="isGlutenFree"
-                            value="1"
-                        />
+                        <input type="radio" name="isGlutenFree" value="1" onChange={pizzaData.isGlutenFree}/>
                         Igen
                     </label>
                     <label className="col-sm-3 col-form-label">
-                        <input
-                            type="radio"
-                            name="isGlutenFree"
-                            value="0"
-                        />
+                        <input type="radio" name="isGlutenFree" value="0" onChange={pizzaData.isGlutenFree}/>
                         Nem
                     </label>
-                    </div>
+                </div>
             </div>
             <div className="form-group row pb-3">
                 <label className="col-sm-3 col-form-label">Kép URL:</label>
@@ -91,12 +83,12 @@ export function PizzaMod() {
             </div>
             <div className="d-flex justify-content-between">
                     <div className="w-50">
-                    <NavLink to={`/egy-pizza/${pizzaData.id}`}>
+                    <NavLink to={`/`}>
                         <button type="submit" className="btn btn-primary">Mentés</button>
                     </NavLink> 
                     </div>
                     <div className="w-50">
-                        <NavLink to={`/egy-pizza/${pizzaData.id}`}>
+                        <NavLink to={`/pizza/${pizzaData.id}`}>
                                 <button className="btn btn-secondary">Vissza</button>
                         </NavLink>
                     </div>
