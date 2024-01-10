@@ -36,10 +36,19 @@ export function PizzaSingleElement() {
                             <img className="img-fluid" style={{maxHeight: 200}} src={pizza.kepURL ? pizza.kepURL : 'https://via.placeholder.com/400x800'}/>
                             </NavLink>
                         </div>
-                        <div>
-                            <NavLink to={`/`}>
-                                <button className="bi bi-backspace rounded">Vissza</button>
+                        <div className="btn-group" role="group">
+                           <NavLink key="n"to={`/mod-pizza/${pizza.id}`}  >
+                                <button type="button" class="btn btn-secondary">Módosítás</button>
+                           </NavLink>
+                            <NavLink key="i" to={`/delete-pizza/${pizza.id}`}>
+                                    <button type="button" class="btn btn-danger">Törlés</button>
                             </NavLink>
+                            <NavLink to={`/`}>
+                                <button className="btn btn-secondary">Vissza</button>
+                            </NavLink>
+                           </div>
+                        <div>
+                            
                         </div>
                     </div>)}
         </div>

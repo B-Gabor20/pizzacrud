@@ -10,9 +10,9 @@ export function PizzaCreate()
                 e.preventDefault();
                 fetch(`https://pizza.kando-dev.eu/Pizza`, {
                     method: "POST",
-                    credentials: "include",
                     headers: {
-                        "Content-Type": "application/json",
+                    "Content-Type": "application/json",
+                    'Access-Control-Allow-Origin': '*'
                     },
                     body: JSON.stringify({
                         name: e.target.elements.name.value,
@@ -53,4 +53,4 @@ export function PizzaCreate()
             </form>
         </div>
     );
-} 
+}
